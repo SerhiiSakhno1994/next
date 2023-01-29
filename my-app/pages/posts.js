@@ -50,7 +50,7 @@ Posts.getInitialProps = async ({ req }) => {
   if (!req) {
     return { posts: null };
   }
-  const res = await fetch(`http://localhost:4300/books`);
+  const res = await fetch(`${process.env.API_URL}/books`);
   const posts = await res.json();
 
   return {
